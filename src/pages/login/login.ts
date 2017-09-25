@@ -13,7 +13,7 @@ import { FormBuilder } from '@angular/forms';
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html'
 })
 export class LoginPage {
   public loginForm;
@@ -32,10 +32,10 @@ export class LoginPage {
 
   loginUser(): void {
       if (!this.loginForm.valid) {
-          console.log(this.loginForm.value);
+        //   this.loginService.getPublicEndpoint().subscribe(
+        //       response => console.log(response)
+        //   );
       } else {
-         
-
           this.loading.present();
       }
   }
