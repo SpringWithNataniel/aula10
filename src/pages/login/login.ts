@@ -1,3 +1,4 @@
+import { LoginServiceProvider } from './../../providers/login-service/login-service';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -19,22 +20,26 @@ export class LoginPage {
   public loginForm;
   loading: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams
-      , public formBuilder: FormBuilder,
-       public nav: NavController) {
+  constructor(
+      public navCtrl: NavController, 
+      public navParams: NavParams,
+      public formBuilder: FormBuilder,
+      public nav: NavController,
+      private loginService:LoginServiceProvider
+    ) {
 
       this.loginForm = formBuilder.group({
           email: [''],
-          password: ['']
+          senha: ['']
       });
 
   }
 
   loginUser(): void {
-      if (!this.loginForm.valid) {
-        //   this.loginService.getPublicEndpoint().subscribe(
-        //       response => console.log(response)
-        //   );
+      if (this.loginForm.valid) {
+          this.loginService.login(this.loginForm.value).subscribe(
+              response => console.log(response)
+          );
       } else {
           this.loading.present();
       }

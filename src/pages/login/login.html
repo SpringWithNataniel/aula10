@@ -14,9 +14,9 @@
 
         <ion-item>
           <ion-label stacked>Senha</ion-label>
-          <ion-input #password formControlName="password" type="password" placeholder="Sua senha" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+          <ion-input #password formControlName="senha" type="password" placeholder="Sua senha" [class.invalid]="!loginForm.controls.senha.valid && loginForm.controls.senha.dirty"></ion-input>
         </ion-item>
-        <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+        <ion-item class="error-message" *ngIf="!loginForm.controls.senha.valid  && loginForm.controls.senha.dirty">
           <p>Sua senha precisa conter pelo menos 6 caracteres</p>
         </ion-item>
 

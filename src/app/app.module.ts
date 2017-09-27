@@ -26,8 +26,8 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
   ],
   imports: [
     BrowserModule,
-    LoginPageModule,
     HttpModule,
+    LoginPageModule,
     IonicModule.forRoot(ComponentInicial)
   ],
   bootstrap: [IonicApp],
@@ -43,7 +43,6 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     StatusBar,
     SplashScreen,
     Utils,
-    Http,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginServiceProvider
   ]
